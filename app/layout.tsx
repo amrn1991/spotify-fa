@@ -10,7 +10,7 @@ const myFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'اسپاتیفای',
+  title: 'فرآواز',
   description: 'موسیقی در کنار آرامش',
 };
 

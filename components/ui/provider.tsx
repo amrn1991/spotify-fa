@@ -1,6 +1,6 @@
 'use client';
 
-import {ChakraProvider, defaultSystem, createSystem, defineConfig, defaultConfig} from '@chakra-ui/react';
+import {ChakraProvider, createSystem, defaultConfig} from '@chakra-ui/react';
 import {ColorModeProvider, type ColorModeProviderProps} from './color-mode';
 
 const system = createSystem(defaultConfig, {
@@ -8,7 +8,7 @@ const system = createSystem(defaultConfig, {
     tokens: {
       colors: {
         gray: {
-          DEFAULT: {value: '#EE0F0F'},
+          DEFAULT: {value: '#e2e2e2'},
           100: {value: '#f5f5f5'},
           200: {value: '#eeeeee'},
           300: {value: '#e0e0e0'},
