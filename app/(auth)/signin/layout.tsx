@@ -1,11 +1,10 @@
-import type {Metadata} from 'next';
 import {Provider} from '@/components/ui/provider';
+import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
-import PlayerLayout from '@/components/PlayerLayout';
+import '../../globals.css';
 
 const myFont = localFont({
-  src: '../public/Vazirmatn[wght].woff2',
+  src: '../../../public/Vazirmatn[wght].woff2',
   display: 'swap',
 });
 
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
   description: 'موسیقی در کنار آرامش',
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -22,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="fa" suppressHydrationWarning>
       <body className={`${myFont.className} antialiased`}>
-        <Provider>
-          <PlayerLayout>{children}</PlayerLayout>
-        </Provider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );

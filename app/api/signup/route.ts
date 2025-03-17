@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import cookie from 'cookie'
@@ -34,7 +33,7 @@ export async function POST(req: Request) {
     'hello',
     { expiresIn: '8h' }
   )
-  
+
   return new Response(JSON.stringify(user), {
     headers: {
       'Set-Cookie': cookie.serialize('FAR_ACCESS_TOKEN', token, {
