@@ -5,7 +5,6 @@ import {Box, Flex, Input, Button} from '@chakra-ui/react';
 import {useRouter} from 'next/navigation';
 import {FormEvent, useState} from 'react';
 import {auth} from '@/lib/mutations';
-import {useSWRConfig} from 'swr';
 
 const AuthForm = ({mode}: {mode: 'signin' | 'signup'}) => {
   const [email, setEmail] = useState('');

@@ -1,10 +1,10 @@
 import {Provider} from '@/components/ui/provider';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import '../../globals.css';
+import '../globals.css';
 
 const myFont = localFont({
-  src: '../../../public/Vazirmatn[wght].woff2',
+  src: '../../public/Vazirmatn[wght].woff2',
   display: 'swap',
 });
 
