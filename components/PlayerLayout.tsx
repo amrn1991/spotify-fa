@@ -10,7 +10,7 @@ function PlayerLayout({children}: {children: ReactNode}) {
         <Sidebar />
       </Box>
       <Box marginRight="250px" marginBottom="100px">{children}</Box>
-      <Box position="absolute" height="100px" bottom="0" right="0" left="0" background="gray.900">پخش</Box>
+      <Box position="fixed" height="100px" bottom="0" right="0" left="0" background="gray.900">پخش</Box>
     </Box>
   );
 }
