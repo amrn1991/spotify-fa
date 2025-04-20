@@ -1,17 +1,8 @@
 import GradientLayout from '@/components/GradientLayout';
-import prisma from '@/lib/prisma';
-import {useMe} from '@/lib/hooks';
 import {Box, Text, Flex, Image} from '@chakra-ui/react';
-
-const getArtists = async () => {
-  'use server';
-  const artists = await prisma.artist.findMany({});
-
-  return artists;
-};
+import {getArtists} from '@/lib/actions';
 
 export default async function Home() {
-  // const {user} = useMe();
   const artists = await getArtists();
 
   return (
@@ -19,8 +10,6 @@ export default async function Home() {
       roundImage
       color="gray"
       subtitle="پروفایل"
-      // title={`${user?.firstName} ${user?.lastName}`}
-      // description={`${user?.playlistsCount} public playlists`}
       image="https://dl.dropboxusercontent.com/s/bgiv0ssz3xpotz9/peep.png?dl=0">
       <Box color="white" paddingX="40px">
         <Box marginBottom="40px">

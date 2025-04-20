@@ -1,6 +1,13 @@
+'use client';
+import {useMe} from '@/lib/hooks';
 import {Box, Flex, Text, Image} from '@chakra-ui/react';
 
-const GradientLayout = ({color, children, image, subtitle, title, description, roundImage}: any) => {
+const GradientLayout = ({color, children, image, subtitle, roundImage}: any) => {
+  const {user, isLoading} = useMe();
+
+  const title = isLoading ? '...' : `${user?.firstName} ${user?.lastName}`;
+  const description = isLoading ? '...' : `${user?.playlistsCount} پلی لیست`;
+
   return (
     <Box
       height="100%"
@@ -18,7 +25,9 @@ const GradientLayout = ({color, children, image, subtitle, title, description, r
           <Text fontSize="x-small">{description}</Text>
         </Box>
       </Flex>
-      <Box paddingBottom="150px" paddingTop="50px">{children}</Box>
+      <Box paddingBottom="150px" paddingTop="50px">
+        {children}
+      </Box>
     </Box>
   );
 };
