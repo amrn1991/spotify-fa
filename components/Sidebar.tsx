@@ -77,7 +77,7 @@ function Sidebar() {
           <List.Root spaceY={2}>
             {playlists.map((playlist: any) => (
               <List.Item paddingX="20px" key={playlist.id}>
-                <NextLink href="/">{playlist.name}</NextLink>
+                <NextLink href={`/playlist/${playlist.id}`}>{playlist.name}</NextLink>
               </List.Item>
             ))}
           </List.Root>
