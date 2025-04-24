@@ -15,7 +15,7 @@ const SongsTable = ({songs}: any) => {
   };
 
   return (
-    <Box bg="transparent" color="white">
+    <Box bg="transparent" >
       <Box padding="10px" marginBottom="20px">
         <Box marginBottom="30px">
           <IconButton aria-label="play" colorScheme="green" size="lg" rounded="full" onMouseDown={() => handlePlay()}>
