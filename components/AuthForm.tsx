@@ -18,7 +18,8 @@ const AuthForm = ({mode}: {mode: 'signin' | 'signup'}) => {
 
     await auth(mode, {email, password});
     setIsLoading(false);
-    router.push('/');
+    // router.push('/');
+    router.refresh()
   };
 
   return (
