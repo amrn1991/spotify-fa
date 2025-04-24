@@ -1,29 +1,24 @@
+'use client'
 import {Box, Table, IconButton} from '@chakra-ui/react';
 import {BsFillPlayFill} from 'react-icons/bs';
 import {AiOutlineClockCircle} from 'react-icons/ai';
-// import {useStoreActions} from 'easy-peasy';
-// import {formatDate, formatTime} from '@/lib/formatters';
+import {useStoreActions} from 'easy-peasy';
+import {formatDate, formatTime} from '@/lib/formatters';
 
 const SongsTable = ({songs}: any) => {
-  // const playSongs = useStoreActions((store: any) => store.changeActiveSongs);
-  // const setActiveSong = useStoreActions((store: any) => store.changeActiveSong);
+  const playSongs = useStoreActions((store: any) => store.changeActiveSongs);
+  const setActiveSong = useStoreActions((store: any) => store.changeActiveSong);
 
-  // const handlePlay = (activeSong?) => {
-  //   setActiveSong(activeSong || songs[0]);
-  //   playSongs(songs);
-  // };
+  const handlePlay = (activeSong?: any) => {
+      setActiveSong(activeSong || songs[0]);
+      playSongs(songs);
+  };
 
   return (
     <Box bg="transparent" color="white">
       <Box padding="10px" marginBottom="20px">
         <Box marginBottom="30px">
-          <IconButton
-            aria-label="play"
-            colorScheme="green"
-            size="lg"
-            rounded="full"
-            // onClick={() => handlePlay()}
-          >
+          <IconButton aria-label="play" colorScheme="green" size="lg" rounded="full" onMouseDown={() => handlePlay()}>
             <BsFillPlayFill fontSize="30px" />
           </IconButton>
         </Box>
@@ -49,12 +44,12 @@ const SongsTable = ({songs}: any) => {
                 }}
                 key={song.id}
                 cursor="pointer"
-                // onClick={() => handlePlay(song)}
-              >
+                onMouseDown={() => handlePlay(song)}
+                >
                 <Table.Cell>{i + 1}</Table.Cell>
                 <Table.Cell>{song.name}</Table.Cell>
-                {/* <Td>{formatDate(song.createdAt)}</Td>
-                <Td>{formatTime(song.duration)}</Td> */}
+                <Table.Cell>{formatDate(song.createdAt)}</Table.Cell>
+                <Table.Cell>{formatTime(song.duration)}</Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>

@@ -19,7 +19,7 @@ export const artistsData: Data[] = [
     songs: [
       {
         name: 'کولی',
-        duration: 83,
+        duration: 236,
         url: 'https://dls.musics-fa.com/song/alibz/dlswm/Mohsen%20Chavoshi%20-%20Koli%20(320).mp3',
       },
     ],

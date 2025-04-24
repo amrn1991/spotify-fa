@@ -1,5 +1,5 @@
 import {Provider} from '@/components/ui/provider';
-import { Metadata } from 'next';
+import {Metadata} from 'next';
 import localFont from 'next/font/local';
 import '../globals.css';
 
@@ -21,7 +21,9 @@ export default function Layout({
   return (
     <html lang="fa" suppressHydrationWarning>
       <body className={`${myFont.className} antialiased`}>
-        <Provider>{children}</Provider>
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );
