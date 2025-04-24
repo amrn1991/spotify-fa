@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import cookie from 'cookie'
+import {serialize} from 'cookie'
 import prisma from '@/lib/prisma'
 
 export async function POST(req: Request) {
@@ -27,7 +27,7 @@ export async function POST(req: Request) {
 
     return new Response(JSON.stringify(user), {
       headers: {
-        'Set-Cookie': cookie.serialize('FAR_ACCESS_TOKEN', token, {
+        'Set-Cookie': serialize('FAR_ACCESS_TOKEN', token, {
           httpOnly: true,
           maxAge: 8 * 60 * 60,
           path: '/',
