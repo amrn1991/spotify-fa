@@ -39,7 +39,7 @@ function Sidebar() {
   const {playlists} = usePlaylist();
 
   return (
-    <Box width="100%" height="calc(100vh - 100px)" bg="black" paddingX="5px">
+    <Box width="100%" height="calc(100vh - 100px)" paddingX="5px">
       <Box paddingY="20px" height="100%">
         <Box width="120px" marginBottom="20px" paddingX="20px">
           <NextImage src="/icon.svg" alt="logo" height={40} width={40} />
