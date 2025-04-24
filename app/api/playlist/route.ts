@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
 import { validateRoute } from '@/lib/auth'
 
-export async function GET(req: Request, res: Response) {
+export async function GET(req: Request) {
   const user: any = await validateRoute()
 
   if(!user){
