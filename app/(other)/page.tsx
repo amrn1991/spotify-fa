@@ -24,7 +24,7 @@ export default async function Home() {
           <Text fontSize="md">فقط برای شما</Text>
         </Box>
         <Flex>
-          {artists.map((artist, index) => (
+          {artists?.map((artist, index) => (
             <Box paddingX="10px" width="20%" key={index}>
               <Box bg="gray.900" borderRadius="4px" padding="15px" width="100%">
                 <Image src="https://picsum.photos/300/300" borderRadius="100%" />
